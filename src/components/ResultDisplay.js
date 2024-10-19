@@ -25,12 +25,39 @@ const ResultDisplay = ({ result }) => {
       </div>
     );
   } else {
-    return (
-      <div className="result-display">
-        <h2>Result</h2>
-        <p>{result}</p>
-      </div>
-    );
+    // Check if the result is "Expired"
+    if (result === 'Expired') {
+      return (
+        <div className="result-display">
+          <h2>Result</h2>
+          <p>{result}</p> {/* Just display "Expired" */}
+        </div>
+      );
+    } else {
+      // Extract days from the result if it's in a specific format
+      const daysMatch = result.match(/\((\d+)-(\d+)\)/);
+      if (daysMatch) {
+        const minDays = parseInt(daysMatch[1], 10);
+        const maxDays = parseInt(daysMatch[2], 10);
+        
+        // Check if the minimum days are more than 15
+        if (minDays>=10) {
+          return (
+            <div className="result-display">
+              <h2>Result</h2>
+              <p>{result} - About to Expire</p> {/* Append "About to Expire" */}
+            </div>
+          );
+        } else {
+          return (
+            <div className="result-display">
+              <h2>Result</h2>
+              <p>{result} "Fresh"</p> {/* Append "days left to expire" */}
+            </div>
+          );
+        }
+      }
+    }
   }
 };
 
