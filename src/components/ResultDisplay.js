@@ -14,13 +14,21 @@ const ResultDisplay = ({ result }) => {
             </tr>
           </thead>
           <tbody>
+          {result.map((item, index) => (
+            <tr key={index}>
+              <td>{item.itemName || item.label}</td> 
+              <td>{item.count || item.value}</td> {/* Use item.count if available */}
+            </tr>
+          ))}
+        </tbody>
+          {/* <tbody>
             {result.map((item, index) => (
               <tr key={index}>
                 <td>{item.label}</td>
                 <td>{item.value}</td>
               </tr>
             ))}
-          </tbody>
+          </tbody> */}
         </table>
       </div>
     );
