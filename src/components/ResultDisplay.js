@@ -5,7 +5,7 @@ const ResultDisplay = ({ result }) => {
   if (Array.isArray(result)) {
     return (
       <div className="result-display">
-        <h2>OCR Result</h2>
+        <h2>Result</h2>
         <table className="result-table">
           <thead>
             <tr>
