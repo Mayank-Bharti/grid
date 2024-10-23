@@ -29,9 +29,9 @@ const ImageUpload = ({ selectedOption, onResult }) => {
         // Simulating a response for the Quantity option
         setTimeout(() => {
           const Data = [
-            { itemName: 'Product A', count: 10 },
-            { itemName: 'Product B', count: 5 },
-            { itemName: 'Product C', count: 15 },
+            { itemName: 'Banana', count: 3 },
+            // { itemName: '', count: 5 },
+            // { itemName: 'Product C', count: 15 },
           ];
           onResult(Data); // Pass the dummy data to the onResult function
         }, 1000); // Simulate network delay
@@ -55,9 +55,9 @@ const ImageUpload = ({ selectedOption, onResult }) => {
   // Simulating a response for the Quantity option
   setTimeout(() => {
     const Data = [
-      { itemName: 'Product A', count: 10 },
-      { itemName: 'Product B', count: 5 },
-      { itemName: 'Product C', count: 15 },
+      { itemName: 'Banana', count: 3 },
+      // { itemName: 'Product B', count: 5 },
+      // { itemName: 'Product C', count: 15 },
     ];
     onResult(Data); // Pass the dummy data to the onResult function
   }, 1000); // Simulate network delay
